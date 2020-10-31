@@ -28,8 +28,29 @@ $(document).ready(function() {
         var btnClick = document.querySelectorAll("button");
         for (let i = 0; len = btnClick.length; i< len ; index++) {
             // console.log(i)
-            btnClick[i].addEventListener("click", savetoLocalStorage);
-        }
-            
+            btnClick[i].addEventListener("click", saveToLocalStorage);
         }
     }
+    // Saving to local Storage by looking at text area base on id.
+    function saveToLocalStorage() {
+        console.log(this)
+        var hNum = this.id
+        var x = "#hour" + hNum
+        var w = document.querySelector(x).nodeValue
+        localStorage.setItem(x, w)
+    }
+    // Creating local storage retreval
+    function getFromLocalStorage(){
+        for (let i = 9; i<=19; i++) {
+            var x = "#hour" + i
+            if(localStorage.getItem(x)){
+                var w = (localStorage.getItem(x))
+                let p = document.querySelector(x)
+                p.value = w
+                console.log(w)
+            }
+        }
+    }
+    primaryFunction()
+    }
+});
