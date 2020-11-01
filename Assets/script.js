@@ -35,7 +35,6 @@ $(document).ready(function() {
         var x = "#hour" + hNum
         var w = document.querySelector(x).value
         localStorage.setItem(x, w)
-    //     console.log(nodeValue)
     }
     // Creating local storage retreval
     function getFromLocalStorage(){
